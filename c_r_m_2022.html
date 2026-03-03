@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a1430863da28eb26342364a8aefeef47 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+             background: white; padding: 12px; border-radius: 8px;
+             border: 1px solid #ccc; font-family: Arial; font-size: 13px;">
+  <b>Bloc politique dominant</b><br>Élections présidentielles 2022 T1<br>
+  <i>Taille = population</i><br><br>
+  <span style="background:#2196F3;width:14px;height:14px;display:inline-block;border-radius:50%;margin-right:6px"></span>Droite<br>  <span style="background:#F44336;width:14px;height:14px;display:inline-block;border-radius:50%;margin-right:6px"></span>Gauche<br>  <span style="background:#FF9800;width:14px;height:14px;display:inline-block;border-radius:50%;margin-right:6px"></span>Centre<br>  <span style="background:#9C27B0;width:14px;height:14px;display:inline-block;border-radius:50%;margin-right:6px"></span>Extrême gauche<br>  <span style="background:#795548;width:14px;height:14px;display:inline-block;border-radius:50%;margin-right:6px"></span>Extrême droite<br></div>
+    
+            <div class="folium-map" id="map_a1430863da28eb26342364a8aefeef47" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a1430863da28eb26342364a8aefeef47 = L.map(
+                "map_a1430863da28eb26342364a8aefeef47",
+                {
+                    center: [48.117, -1.678],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f304248dc574ffca05037d9b8e272a2d = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f304248dc574ffca05037d9b8e272a2d.addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+            var circle_marker_f97a20ccfe713b7e8046f73bb25e3b1b = L.circleMarker(
+                [48.1231, -1.6086],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_690e3f706ca6e3aee05d095614255030 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_85bc9e0dfbe5301f492b55ad2aae1da2 = $(`<div id="html_85bc9e0dfbe5301f492b55ad2aae1da2" style="width: 100.0%; height: 100.0%;"><b>Acigné</b><br>Bloc : CTR</div>`)[0];
+                popup_690e3f706ca6e3aee05d095614255030.setContent(html_85bc9e0dfbe5301f492b55ad2aae1da2);
+            
+        
+
+        circle_marker_f97a20ccfe713b7e8046f73bb25e3b1b.bindPopup(popup_690e3f706ca6e3aee05d095614255030)
+        ;
+
+        
+    
+    
+            circle_marker_f97a20ccfe713b7e8046f73bb25e3b1b.bindTooltip(
+                `<div>
+                     Acigné — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da37d9b7390f6a5414a5b2af9f2ab906 = L.circleMarker(
+                [48.2267, -1.7297],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_b96560126744dfaf8649c17508f751fd = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_97729d1d05b7ac0875882d6506b78a1b = $(`<div id="html_97729d1d05b7ac0875882d6506b78a1b" style="width: 100.0%; height: 100.0%;"><b>Bais</b><br>Bloc : CTR</div>`)[0];
+                popup_b96560126744dfaf8649c17508f751fd.setContent(html_97729d1d05b7ac0875882d6506b78a1b);
+            
+        
+
+        circle_marker_da37d9b7390f6a5414a5b2af9f2ab906.bindPopup(popup_b96560126744dfaf8649c17508f751fd)
+        ;
+
+        
+    
+    
+            circle_marker_da37d9b7390f6a5414a5b2af9f2ab906.bindTooltip(
+                `<div>
+                     Bais — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5a0394cfd7fc5db7f4c1d4b40f95544 = L.circleMarker(
+                [48.0731, -1.6344],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_a171075b79cbe9a27d1f154064b19187 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0f7e7efd87f48295b6fbfc4c71832c77 = $(`<div id="html_0f7e7efd87f48295b6fbfc4c71832c77" style="width: 100.0%; height: 100.0%;"><b>Bédée</b><br>Bloc : CTR</div>`)[0];
+                popup_a171075b79cbe9a27d1f154064b19187.setContent(html_0f7e7efd87f48295b6fbfc4c71832c77);
+            
+        
+
+        circle_marker_b5a0394cfd7fc5db7f4c1d4b40f95544.bindPopup(popup_a171075b79cbe9a27d1f154064b19187)
+        ;
+
+        
+    
+    
+            circle_marker_b5a0394cfd7fc5db7f4c1d4b40f95544.bindTooltip(
+                `<div>
+                     Bédée — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a6461f1aa536ed3de750ca6a82092da0 = L.circleMarker(
+                [48.0861, -1.7522],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_09854a4c25a1ef230f6d5cc161cfab84 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0b637a54fe8206ee93aefb478cfb9c2c = $(`<div id="html_0b637a54fe8206ee93aefb478cfb9c2c" style="width: 100.0%; height: 100.0%;"><b>Billé</b><br>Bloc : CTR</div>`)[0];
+                popup_09854a4c25a1ef230f6d5cc161cfab84.setContent(html_0b637a54fe8206ee93aefb478cfb9c2c);
+            
+        
+
+        circle_marker_a6461f1aa536ed3de750ca6a82092da0.bindPopup(popup_09854a4c25a1ef230f6d5cc161cfab84)
+        ;
+
+        
+    
+    
+            circle_marker_a6461f1aa536ed3de750ca6a82092da0.bindTooltip(
+                `<div>
+                     Billé — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6eaa456f1a9a4be380d535871844d0df = L.circleMarker(
+                [48.1506, -1.7156],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_85da5c7e6a74b181f422d6cb49248140 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_c76cfe5087af30e9c9a571b5d011208c = $(`<div id="html_c76cfe5087af30e9c9a571b5d011208c" style="width: 100.0%; height: 100.0%;"><b>Bosse-de-Bretagne</b><br>Bloc : CTR</div>`)[0];
+                popup_85da5c7e6a74b181f422d6cb49248140.setContent(html_c76cfe5087af30e9c9a571b5d011208c);
+            
+        
+
+        circle_marker_6eaa456f1a9a4be380d535871844d0df.bindPopup(popup_85da5c7e6a74b181f422d6cb49248140)
+        ;
+
+        
+    
+    
+            circle_marker_6eaa456f1a9a4be380d535871844d0df.bindTooltip(
+                `<div>
+                     Bosse-de-Bretagne — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a19132ba50251a06c74f9fc5bab683c4 = L.circleMarker(
+                [48.1728, -1.5753],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_8fe0741e2e42c01fec2d3ea3d768b4d2 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_ebfc27fb6d40f557ab66a19d654c84ba = $(`<div id="html_ebfc27fb6d40f557ab66a19d654c84ba" style="width: 100.0%; height: 100.0%;"><b>Bourg-des-Comptes</b><br>Bloc : CTR</div>`)[0];
+                popup_8fe0741e2e42c01fec2d3ea3d768b4d2.setContent(html_ebfc27fb6d40f557ab66a19d654c84ba);
+            
+        
+
+        circle_marker_a19132ba50251a06c74f9fc5bab683c4.bindPopup(popup_8fe0741e2e42c01fec2d3ea3d768b4d2)
+        ;
+
+        
+    
+    
+            circle_marker_a19132ba50251a06c74f9fc5bab683c4.bindTooltip(
+                `<div>
+                     Bourg-des-Comptes — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cfdb50064533452f88218737d13b1934 = L.circleMarker(
+                [48.0964, -1.5814],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_96a4feb512a29ab902d60d49aae3112f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_20b068da72e3d9ba87f29fa4c7134ac6 = $(`<div id="html_20b068da72e3d9ba87f29fa4c7134ac6" style="width: 100.0%; height: 100.0%;"><b>Breteil</b><br>Bloc : CTR</div>`)[0];
+                popup_96a4feb512a29ab902d60d49aae3112f.setContent(html_20b068da72e3d9ba87f29fa4c7134ac6);
+            
+        
+
+        circle_marker_cfdb50064533452f88218737d13b1934.bindPopup(popup_96a4feb512a29ab902d60d49aae3112f)
+        ;
+
+        
+    
+    
+            circle_marker_cfdb50064533452f88218737d13b1934.bindTooltip(
+                `<div>
+                     Breteil — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d0e7b96cfb1c3d025bf60b6cbbcd4f43 = L.circleMarker(
+                [48.1714, -1.6086],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_a927b2857a903f96777be9df5d24095d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_119871f7d9d3b7f9bd712ab2e087f476 = $(`<div id="html_119871f7d9d3b7f9bd712ab2e087f476" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Broualan</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 6.1% | <b>Gauche :</b> 4.8% | <b>EXD :</b> 30.9%<br>         <b>Revenu médian :</b> 20490 €/UC<br>         <b>Abstention :</b> 15.9%     </div>     </div>`)[0];
+                popup_a927b2857a903f96777be9df5d24095d.setContent(html_119871f7d9d3b7f9bd712ab2e087f476);
+            
+        
+
+        circle_marker_d0e7b96cfb1c3d025bf60b6cbbcd4f43.bindPopup(popup_a927b2857a903f96777be9df5d24095d)
+        ;
+
+        
+    
+    
+            circle_marker_d0e7b96cfb1c3d025bf60b6cbbcd4f43.bindTooltip(
+                `<div>
+                     Broualan — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_06e5c3c3cde27eee39fee0a0943f4f2b = L.circleMarker(
+                [48.1056, -1.7381],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.952478475391574, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_ba7aa8132f0b9408829449c3ee888ad8 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_5f88f7db3bbc5bd92609fc33724d5f96 = $(`<div id="html_5f88f7db3bbc5bd92609fc33724d5f96" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Cesson-Sévigné</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 17,716<br>         <b>Droite :</b> 7.3% | <b>Gauche :</b> 11.2% | <b>EXD :</b> 16.7%<br>         <b>Revenu médian :</b> 29450 €/UC<br>         <b>Abstention :</b> 18.0%     </div>     </div>`)[0];
+                popup_ba7aa8132f0b9408829449c3ee888ad8.setContent(html_5f88f7db3bbc5bd92609fc33724d5f96);
+            
+        
+
+        circle_marker_06e5c3c3cde27eee39fee0a0943f4f2b.bindPopup(popup_ba7aa8132f0b9408829449c3ee888ad8)
+        ;
+
+        
+    
+    
+            circle_marker_06e5c3c3cde27eee39fee0a0943f4f2b.bindTooltip(
+                `<div>
+                     Cesson-Sévigné — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_447b58470afaf55162f4a07f9b027d58 = L.circleMarker(
+                [48.1389, -1.5672],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_3e61463122f31e145ae0e74cf3499dcb = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d9564d704e940b146c60a1470175616a = $(`<div id="html_d9564d704e940b146c60a1470175616a" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>la Chapelle-Chaussée</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 1,300<br>         <b>Droite :</b> 4.6% | <b>Gauche :</b> 7.8% | <b>EXD :</b> 28.9%<br>         <b>Revenu médian :</b> 23890 €/UC<br>         <b>Abstention :</b> 17.9%     </div>     </div>`)[0];
+                popup_3e61463122f31e145ae0e74cf3499dcb.setContent(html_d9564d704e940b146c60a1470175616a);
+            
+        
+
+        circle_marker_447b58470afaf55162f4a07f9b027d58.bindPopup(popup_3e61463122f31e145ae0e74cf3499dcb)
+        ;
+
+        
+    
+    
+            circle_marker_447b58470afaf55162f4a07f9b027d58.bindTooltip(
+                `<div>
+                     la Chapelle-Chaussée — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f0e39d4f19bcbf23715334806ff1e57d = L.circleMarker(
+                [48.1136, -1.5972],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_bf1006008475e737ffeebfef13e9a8de = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4967f67e8f5054cbe75b6c76f90c0e2e = $(`<div id="html_4967f67e8f5054cbe75b6c76f90c0e2e" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Chapelle du Lou du Lac</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 4.2% | <b>Gauche :</b> 8.1% | <b>EXD :</b> 30.8%<br>         <b>Revenu médian :</b> 23310 €/UC<br>         <b>Abstention :</b> 15.3%     </div>     </div>`)[0];
+                popup_bf1006008475e737ffeebfef13e9a8de.setContent(html_4967f67e8f5054cbe75b6c76f90c0e2e);
+            
+        
+
+        circle_marker_f0e39d4f19bcbf23715334806ff1e57d.bindPopup(popup_bf1006008475e737ffeebfef13e9a8de)
+        ;
+
+        
+    
+    
+            circle_marker_f0e39d4f19bcbf23715334806ff1e57d.bindTooltip(
+                `<div>
+                     Chapelle du Lou du Lac — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc0072ad49056d93ba818e0a6bc02cb0 = L.circleMarker(
+                [48.1667, -1.7333],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_8ff7287009b833e9470fe094a5694ed4 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1c86ceb206fde9434727ca8948bf7828 = $(`<div id="html_1c86ceb206fde9434727ca8948bf7828" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>la Chapelle-Thouarault</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 2,252<br>         <b>Droite :</b> 2.7% | <b>Gauche :</b> 9.0% | <b>EXD :</b> 22.0%<br>         <b>Revenu médian :</b> 23720 €/UC<br>         <b>Abstention :</b> 16.2%     </div>     </div>`)[0];
+                popup_8ff7287009b833e9470fe094a5694ed4.setContent(html_1c86ceb206fde9434727ca8948bf7828);
+            
+        
+
+        circle_marker_fc0072ad49056d93ba818e0a6bc02cb0.bindPopup(popup_8ff7287009b833e9470fe094a5694ed4)
+        ;
+
+        
+    
+    
+            circle_marker_fc0072ad49056d93ba818e0a6bc02cb0.bindTooltip(
+                `<div>
+                     la Chapelle-Thouarault — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b058a5f6d3f0d66453584b2548688c8 = L.circleMarker(
+                [48.1069, -1.6247],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_d477a0d94f9a12f41b981ef251e0e702 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d85f4f75180eef04b8ab405280c51e3d = $(`<div id="html_d85f4f75180eef04b8ab405280c51e3d" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Chasné-sur-Illet</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 2.6% | <b>Gauche :</b> 14.0% | <b>EXD :</b> 20.7%<br>         <b>Revenu médian :</b> 26210 €/UC<br>         <b>Abstention :</b> 17.9%     </div>     </div>`)[0];
+                popup_d477a0d94f9a12f41b981ef251e0e702.setContent(html_d85f4f75180eef04b8ab405280c51e3d);
+            
+        
+
+        circle_marker_2b058a5f6d3f0d66453584b2548688c8.bindPopup(popup_d477a0d94f9a12f41b981ef251e0e702)
+        ;
+
+        
+    
+    
+            circle_marker_2b058a5f6d3f0d66453584b2548688c8.bindTooltip(
+                `<div>
+                     Chasné-sur-Illet — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a601285806a832d22400d073538a1ca = L.circleMarker(
+                [48.0556, -1.7142],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_ee0ee9c4dcf74555dab162a31f366c37 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9073eb8a8964454c087b88901d9ab23b = $(`<div id="html_9073eb8a8964454c087b88901d9ab23b" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Châteaubourg</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 3.1% | <b>Gauche :</b> 10.2% | <b>EXD :</b> 20.3%<br>         <b>Revenu médian :</b> 24830 €/UC<br>         <b>Abstention :</b> 19.1%     </div>     </div>`)[0];
+                popup_ee0ee9c4dcf74555dab162a31f366c37.setContent(html_9073eb8a8964454c087b88901d9ab23b);
+            
+        
+
+        circle_marker_9a601285806a832d22400d073538a1ca.bindPopup(popup_ee0ee9c4dcf74555dab162a31f366c37)
+        ;
+
+        
+    
+    
+            circle_marker_9a601285806a832d22400d073538a1ca.bindTooltip(
+                `<div>
+                     Châteaubourg — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af4c4b17600720e7390323555b69b257 = L.circleMarker(
+                [48.2044, -1.7011],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_d56ec4ddd575dfdcfc185af1df3adde9 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4e90327f54d0fef8619bfa3ba94d5362 = $(`<div id="html_4e90327f54d0fef8619bfa3ba94d5362" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Châteaugiron</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 4.1% | <b>Gauche :</b> 10.8% | <b>EXD :</b> 20.0%<br>         <b>Revenu médian :</b> 26900 €/UC<br>         <b>Abstention :</b> 17.3%     </div>     </div>`)[0];
+                popup_d56ec4ddd575dfdcfc185af1df3adde9.setContent(html_4e90327f54d0fef8619bfa3ba94d5362);
+            
+        
+
+        circle_marker_af4c4b17600720e7390323555b69b257.bindPopup(popup_d56ec4ddd575dfdcfc185af1df3adde9)
+        ;
+
+        
+    
+    
+            circle_marker_af4c4b17600720e7390323555b69b257.bindTooltip(
+                `<div>
+                     Châteaugiron — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ba8ec66f2cc30c691d7cda2a46c057d = L.circleMarker(
+                [48.1547, -1.5514],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#795548", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_cdc1315cfaa91e6ddfa3909cb465c5cf = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_df2bb98568ba29b540e1a1dcbe4482ef = $(`<div id="html_df2bb98568ba29b540e1a1dcbe4482ef" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Châteauneuf-d'Ille-et-Vilaine</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#795548;font-weight:bold'>EXD</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 3.5% | <b>Gauche :</b> 6.1% | <b>EXD :</b> 34.8%<br>         <b>Revenu médian :</b> 22380 €/UC<br>         <b>Abstention :</b> 20.9%     </div>     </div>`)[0];
+                popup_cdc1315cfaa91e6ddfa3909cb465c5cf.setContent(html_df2bb98568ba29b540e1a1dcbe4482ef);
+            
+        
+
+        circle_marker_4ba8ec66f2cc30c691d7cda2a46c057d.bindPopup(popup_cdc1315cfaa91e6ddfa3909cb465c5cf)
+        ;
+
+        
+    
+    
+            circle_marker_4ba8ec66f2cc30c691d7cda2a46c057d.bindTooltip(
+                `<div>
+                     Châteauneuf-d'Ille-et-Vilaine — Extrême droite
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f9ebdf08bdec0aff0c27fe6ab7efe80 = L.circleMarker(
+                [48.1, -1.7],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#795548", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_484a6e6ca6a89141f09afdadd84425b0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_2ae6d8b0177ee1c08877c0185e7ad6ef = $(`<div id="html_2ae6d8b0177ee1c08877c0185e7ad6ef" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Chelun</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#795548;font-weight:bold'>EXD</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 10.9% | <b>Gauche :</b> 4.3% | <b>EXD :</b> 40.2%<br>         <b>Revenu médian :</b> 20640 €/UC<br>         <b>Abstention :</b> 21.9%     </div>     </div>`)[0];
+                popup_484a6e6ca6a89141f09afdadd84425b0.setContent(html_2ae6d8b0177ee1c08877c0185e7ad6ef);
+            
+        
+
+        circle_marker_7f9ebdf08bdec0aff0c27fe6ab7efe80.bindPopup(popup_484a6e6ca6a89141f09afdadd84425b0)
+        ;
+
+        
+    
+    
+            circle_marker_7f9ebdf08bdec0aff0c27fe6ab7efe80.bindTooltip(
+                `<div>
+                     Chelun — Extrême droite
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb35c610dd54ec0b63f959179fca792e = L.circleMarker(
+                [48.1956, -1.6608],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_a31608c17bcf779d0fb5d9c6f4a6afe1 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a2f523fc2f6c5a4342040a537fea1294 = $(`<div id="html_a2f523fc2f6c5a4342040a537fea1294" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Dol-de-Bretagne</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 4.8% | <b>Gauche :</b> 6.8% | <b>EXD :</b> 28.3%<br>         <b>Revenu médian :</b> 21700 €/UC<br>         <b>Abstention :</b> 27.8%     </div>     </div>`)[0];
+                popup_a31608c17bcf779d0fb5d9c6f4a6afe1.setContent(html_a2f523fc2f6c5a4342040a537fea1294);
+            
+        
+
+        circle_marker_bb35c610dd54ec0b63f959179fca792e.bindPopup(popup_a31608c17bcf779d0fb5d9c6f4a6afe1)
+        ;
+
+        
+    
+    
+            circle_marker_bb35c610dd54ec0b63f959179fca792e.bindTooltip(
+                `<div>
+                     Dol-de-Bretagne — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4642e25e8f2452cfaa9e76fdef8f42f4 = L.circleMarker(
+                [48.1139, -1.7247],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_c6e2f462fa66005556be3961f65b4f09 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_7261f827796ec3c91d1aeb556eb3800a = $(`<div id="html_7261f827796ec3c91d1aeb556eb3800a" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Domagné</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 4.0% | <b>Gauche :</b> 8.1% | <b>EXD :</b> 26.4%<br>         <b>Revenu médian :</b> 23760 €/UC<br>         <b>Abstention :</b> 16.0%     </div>     </div>`)[0];
+                popup_c6e2f462fa66005556be3961f65b4f09.setContent(html_7261f827796ec3c91d1aeb556eb3800a);
+            
+        
+
+        circle_marker_4642e25e8f2452cfaa9e76fdef8f42f4.bindPopup(popup_c6e2f462fa66005556be3961f65b4f09)
+        ;
+
+        
+    
+    
+            circle_marker_4642e25e8f2452cfaa9e76fdef8f42f4.bindTooltip(
+                `<div>
+                     Domagné — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a21d8620a9190e13472fca31cca75fa = L.circleMarker(
+                [48.1736, -1.6514],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_fc67982e7356be050864a517b82c4388 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_5d618f389f59e992da0638fdd06bf876 = $(`<div id="html_5d618f389f59e992da0638fdd06bf876" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Ferré</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 6.7% | <b>Gauche :</b> 5.0% | <b>EXD :</b> 35.4%<br>         <b>Revenu médian :</b> 21070 €/UC<br>         <b>Abstention :</b> 15.9%     </div>     </div>`)[0];
+                popup_fc67982e7356be050864a517b82c4388.setContent(html_5d618f389f59e992da0638fdd06bf876);
+            
+        
+
+        circle_marker_9a21d8620a9190e13472fca31cca75fa.bindPopup(popup_fc67982e7356be050864a517b82c4388)
+        ;
+
+        
+    
+    
+            circle_marker_9a21d8620a9190e13472fca31cca75fa.bindTooltip(
+                `<div>
+                     Ferré — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cde126a200b429f1fc8202f50f152ad9 = L.circleMarker(
+                [48.1367, -1.7297],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_81f8d975f16ed5ff8a1e1b4977c591fe = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_28d4c39df462a62746885dcb9aafe5fd = $(`<div id="html_28d4c39df462a62746885dcb9aafe5fd" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>l'Hermitage</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 4,692<br>         <b>Droite :</b> 4.0% | <b>Gauche :</b> 12.6% | <b>EXD :</b> 21.4%<br>         <b>Revenu médian :</b> 24040 €/UC<br>         <b>Abstention :</b> 19.7%     </div>     </div>`)[0];
+                popup_81f8d975f16ed5ff8a1e1b4977c591fe.setContent(html_28d4c39df462a62746885dcb9aafe5fd);
+            
+        
+
+        circle_marker_cde126a200b429f1fc8202f50f152ad9.bindPopup(popup_81f8d975f16ed5ff8a1e1b4977c591fe)
+        ;
+
+        
+    
+    
+            circle_marker_cde126a200b429f1fc8202f50f152ad9.bindTooltip(
+                `<div>
+                     l'Hermitage — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2117c5f470fc368163906e936dc91d58 = L.circleMarker(
+                [48.2, -1.6167],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#795548", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_a3d8615a07cb36f4f70b19439762719a = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8c72f0881200959e5334a1c3a6d20a18 = $(`<div id="html_8c72f0881200959e5334a1c3a6d20a18" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Iffs</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#795548;font-weight:bold'>EXD</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 8.0% | <b>Gauche :</b> 5.1% | <b>EXD :</b> 34.9%<br>         <b>Revenu médian :</b> 24430 €/UC<br>         <b>Abstention :</b> 13.5%     </div>     </div>`)[0];
+                popup_a3d8615a07cb36f4f70b19439762719a.setContent(html_8c72f0881200959e5334a1c3a6d20a18);
+            
+        
+
+        circle_marker_2117c5f470fc368163906e936dc91d58.bindPopup(popup_a3d8615a07cb36f4f70b19439762719a)
+        ;
+
+        
+    
+    
+            circle_marker_2117c5f470fc368163906e936dc91d58.bindTooltip(
+                `<div>
+                     Iffs — Extrême droite
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e37693391bba7e68696efd7e462474ba = L.circleMarker(
+                [48.1414, -1.6986],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_db40470ed0e22d16719dcdd157312dca = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_dbe1333664b89e78cfa7d32dc33cb165 = $(`<div id="html_dbe1333664b89e78cfa7d32dc33cb165" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Laillé</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 5,131<br>         <b>Droite :</b> 3.6% | <b>Gauche :</b> 10.5% | <b>EXD :</b> 21.2%<br>         <b>Revenu médian :</b> 26950 €/UC<br>         <b>Abstention :</b> 18.7%     </div>     </div>`)[0];
+                popup_db40470ed0e22d16719dcdd157312dca.setContent(html_dbe1333664b89e78cfa7d32dc33cb165);
+            
+        
+
+        circle_marker_e37693391bba7e68696efd7e462474ba.bindPopup(popup_db40470ed0e22d16719dcdd157312dca)
+        ;
+
+        
+    
+    
+            circle_marker_e37693391bba7e68696efd7e462474ba.bindTooltip(
+                `<div>
+                     Laillé — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_872db1e9232fd153b7988f0962326fde = L.circleMarker(
+                [48.0847, -1.6694],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_25b8eef10595504f400b7317011deab2 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_946d2780d07d6e20b041b4fcbf645e35 = $(`<div id="html_946d2780d07d6e20b041b4fcbf645e35" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Langan</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 1,075<br>         <b>Droite :</b> 3.3% | <b>Gauche :</b> 10.1% | <b>EXD :</b> 27.5%<br>         <b>Revenu médian :</b> 22890 €/UC<br>         <b>Abstention :</b> 18.5%     </div>     </div>`)[0];
+                popup_25b8eef10595504f400b7317011deab2.setContent(html_946d2780d07d6e20b041b4fcbf645e35);
+            
+        
+
+        circle_marker_872db1e9232fd153b7988f0962326fde.bindPopup(popup_25b8eef10595504f400b7317011deab2)
+        ;
+
+        
+    
+    
+            circle_marker_872db1e9232fd153b7988f0962326fde.bindTooltip(
+                `<div>
+                     Langan — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22fe85decf67b64550f508b88fa64ee0 = L.circleMarker(
+                [48.1467, -1.6497],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_476843e7f456c620e899a09bdb12c164 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_754635d2805c8931ede96da94dbdc33d = $(`<div id="html_754635d2805c8931ede96da94dbdc33d" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Louvigné-du-Désert</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 6.8% | <b>Gauche :</b> 3.7% | <b>EXD :</b> 33.4%<br>         <b>Revenu médian :</b> 20580 €/UC<br>         <b>Abstention :</b> 26.5%     </div>     </div>`)[0];
+                popup_476843e7f456c620e899a09bdb12c164.setContent(html_754635d2805c8931ede96da94dbdc33d);
+            
+        
+
+        circle_marker_22fe85decf67b64550f508b88fa64ee0.bindPopup(popup_476843e7f456c620e899a09bdb12c164)
+        ;
+
+        
+    
+    
+            circle_marker_22fe85decf67b64550f508b88fa64ee0.bindTooltip(
+                `<div>
+                     Louvigné-du-Désert — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_45e0da44a4eaf4d9a8f718dca38dfb88 = L.circleMarker(
+                [48.1236, -1.7214],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#795548", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_fa63ba6469d16f1222e2b21dfe084b8b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1434872348e3cef8cf3c7084c7ce8cd6 = $(`<div id="html_1434872348e3cef8cf3c7084c7ce8cd6" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Miniac-Morvan</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#795548;font-weight:bold'>EXD</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 3.5% | <b>Gauche :</b> 5.8% | <b>EXD :</b> 39.8%<br>         <b>Revenu médian :</b> 22330 €/UC<br>         <b>Abstention :</b> 22.9%     </div>     </div>`)[0];
+                popup_fa63ba6469d16f1222e2b21dfe084b8b.setContent(html_1434872348e3cef8cf3c7084c7ce8cd6);
+            
+        
+
+        circle_marker_45e0da44a4eaf4d9a8f718dca38dfb88.bindPopup(popup_fa63ba6469d16f1222e2b21dfe084b8b)
+        ;
+
+        
+    
+    
+            circle_marker_45e0da44a4eaf4d9a8f718dca38dfb88.bindTooltip(
+                `<div>
+                     Miniac-Morvan — Extrême droite
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b24470c30e8f63234192002f4142043 = L.circleMarker(
+                [48.1722, -1.7372],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_b525db5001045e5f1f8f6f859c426565 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_817d56ec58588095f3d5de755e3269be = $(`<div id="html_817d56ec58588095f3d5de755e3269be" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Montreuil-le-Gast</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 2.9% | <b>Gauche :</b> 11.2% | <b>EXD :</b> 22.1%<br>         <b>Revenu médian :</b> 26530 €/UC<br>         <b>Abstention :</b> 16.6%     </div>     </div>`)[0];
+                popup_b525db5001045e5f1f8f6f859c426565.setContent(html_817d56ec58588095f3d5de755e3269be);
+            
+        
+
+        circle_marker_0b24470c30e8f63234192002f4142043.bindPopup(popup_b525db5001045e5f1f8f6f859c426565)
+        ;
+
+        
+    
+    
+            circle_marker_0b24470c30e8f63234192002f4142043.bindTooltip(
+                `<div>
+                     Montreuil-le-Gast — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_99eacbeed0674fd15bef88d67ab9f217 = L.circleMarker(
+                [48.1208, -1.6714],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_279b2430d5c4029074350ab6ccb53aa6 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e2b2c9f3fa626fb065c5c5c6032be196 = $(`<div id="html_e2b2c9f3fa626fb065c5c5c6032be196" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Montreuil-sous-Pérouse</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 6.1% | <b>Gauche :</b> 8.6% | <b>EXD :</b> 23.3%<br>         <b>Revenu médian :</b> 25420 €/UC<br>         <b>Abstention :</b> 18.4%     </div>     </div>`)[0];
+                popup_279b2430d5c4029074350ab6ccb53aa6.setContent(html_e2b2c9f3fa626fb065c5c5c6032be196);
+            
+        
+
+        circle_marker_99eacbeed0674fd15bef88d67ab9f217.bindPopup(popup_279b2430d5c4029074350ab6ccb53aa6)
+        ;
+
+        
+    
+    
+            circle_marker_99eacbeed0674fd15bef88d67ab9f217.bindTooltip(
+                `<div>
+                     Montreuil-sous-Pérouse — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6618e19459b7d54dd75ca27dc938cfad = L.circleMarker(
+                [48.1583, -1.6],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_144adc154d9f188ad8bbde521e693622 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_98c183e36c37155eaac49686f3bdd8f2 = $(`<div id="html_98c183e36c37155eaac49686f3bdd8f2" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Mouazé</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 3.5% | <b>Gauche :</b> 10.6% | <b>EXD :</b> 24.3%<br>         <b>Revenu médian :</b> 25970 €/UC<br>         <b>Abstention :</b> 12.3%     </div>     </div>`)[0];
+                popup_144adc154d9f188ad8bbde521e693622.setContent(html_98c183e36c37155eaac49686f3bdd8f2);
+            
+        
+
+        circle_marker_6618e19459b7d54dd75ca27dc938cfad.bindPopup(popup_144adc154d9f188ad8bbde521e693622)
+        ;
+
+        
+    
+    
+            circle_marker_6618e19459b7d54dd75ca27dc938cfad.bindTooltip(
+                `<div>
+                     Mouazé — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_84325626062cd14aa3ee0d9041875dd3 = L.circleMarker(
+                [48.0906, -1.6939],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_50e0f342fe1c857fa1a0296f3da6e2cc = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_f5a03f4351269a8a2613f8adbbf293fc = $(`<div id="html_f5a03f4351269a8a2613f8adbbf293fc" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Moutiers</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 7.2% | <b>Gauche :</b> 3.6% | <b>EXD :</b> 29.8%<br>         <b>Revenu médian :</b> 22110 €/UC<br>         <b>Abstention :</b> 17.7%     </div>     </div>`)[0];
+                popup_50e0f342fe1c857fa1a0296f3da6e2cc.setContent(html_f5a03f4351269a8a2613f8adbbf293fc);
+            
+        
+
+        circle_marker_84325626062cd14aa3ee0d9041875dd3.bindPopup(popup_50e0f342fe1c857fa1a0296f3da6e2cc)
+        ;
+
+        
+    
+    
+            circle_marker_84325626062cd14aa3ee0d9041875dd3.bindTooltip(
+                `<div>
+                     Moutiers — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3eeba3ef5afe94737a0e76d1842836b = L.circleMarker(
+                [48.1278, -1.5878],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_2bc2106753ec32780af3c3d3b8a59e6a = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_72a112ed77db8b84f68eee3f6b4869ab = $(`<div id="html_72a112ed77db8b84f68eee3f6b4869ab" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Noyal-Châtillon-sur-Seiche</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 7,631<br>         <b>Droite :</b> 4.0% | <b>Gauche :</b> 10.8% | <b>EXD :</b> 21.6%<br>         <b>Revenu médian :</b> 24960 €/UC<br>         <b>Abstention :</b> 16.6%     </div>     </div>`)[0];
+                popup_2bc2106753ec32780af3c3d3b8a59e6a.setContent(html_72a112ed77db8b84f68eee3f6b4869ab);
+            
+        
+
+        circle_marker_f3eeba3ef5afe94737a0e76d1842836b.bindPopup(popup_2bc2106753ec32780af3c3d3b8a59e6a)
+        ;
+
+        
+    
+    
+            circle_marker_f3eeba3ef5afe94737a0e76d1842836b.bindTooltip(
+                `<div>
+                     Noyal-Châtillon-sur-Seiche — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2fd7ae4c0bce80f54634dae8c95954a3 = L.circleMarker(
+                [48.0722, -1.5514],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_ef00981a17e3b8f8fe1dc5b39f3656a4 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_bee8ff156dc0280cd53600233bca8f03 = $(`<div id="html_bee8ff156dc0280cd53600233bca8f03" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Petit-Fougeray</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 3.9% | <b>Gauche :</b> 9.4% | <b>EXD :</b> 30.4%<br>         <b>Revenu médian :</b> 24160 €/UC<br>         <b>Abstention :</b> 15.7%     </div>     </div>`)[0];
+                popup_ef00981a17e3b8f8fe1dc5b39f3656a4.setContent(html_bee8ff156dc0280cd53600233bca8f03);
+            
+        
+
+        circle_marker_2fd7ae4c0bce80f54634dae8c95954a3.bindPopup(popup_ef00981a17e3b8f8fe1dc5b39f3656a4)
+        ;
+
+        
+    
+    
+            circle_marker_2fd7ae4c0bce80f54634dae8c95954a3.bindTooltip(
+                `<div>
+                     Petit-Fougeray — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5a334e1cf7a487e9b0408a27c686af2d = L.circleMarker(
+                [48.1564, -1.6778],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_81e7a363090bd4ddab664ec2398e6f39 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0b039239ac9787c62f9c17d2a20be1d0 = $(`<div id="html_0b039239ac9787c62f9c17d2a20be1d0" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Pleugueneuc</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 2.7% | <b>Gauche :</b> 8.4% | <b>EXD :</b> 32.6%<br>         <b>Revenu médian :</b> 21900 €/UC<br>         <b>Abstention :</b> 17.9%     </div>     </div>`)[0];
+                popup_81e7a363090bd4ddab664ec2398e6f39.setContent(html_0b039239ac9787c62f9c17d2a20be1d0);
+            
+        
+
+        circle_marker_5a334e1cf7a487e9b0408a27c686af2d.bindPopup(popup_81e7a363090bd4ddab664ec2398e6f39)
+        ;
+
+        
+    
+    
+            circle_marker_5a334e1cf7a487e9b0408a27c686af2d.bindTooltip(
+                `<div>
+                     Pleugueneuc — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2408d69a55f214967f07f95248471daf = L.circleMarker(
+                [48.0897, -1.7611],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_24d9192942190f521a777a4883f322e3 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_baddca0e6aada6a64a5ced4469dccb0e = $(`<div id="html_baddca0e6aada6a64a5ced4469dccb0e" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Poilley</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 6.8% | <b>Gauche :</b> 6.8% | <b>EXD :</b> 28.4%<br>         <b>Revenu médian :</b> 21970 €/UC<br>         <b>Abstention :</b> 24.7%     </div>     </div>`)[0];
+                popup_24d9192942190f521a777a4883f322e3.setContent(html_baddca0e6aada6a64a5ced4469dccb0e);
+            
+        
+
+        circle_marker_2408d69a55f214967f07f95248471daf.bindPopup(popup_24d9192942190f521a777a4883f322e3)
+        ;
+
+        
+    
+    
+            circle_marker_2408d69a55f214967f07f95248471daf.bindTooltip(
+                `<div>
+                     Poilley — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_56a6677fc19099770fd761635fbecce4 = L.circleMarker(
+                [48.1972, -1.7153],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_8ddf4566db2b022bcf96e36bab1a0668 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d866afaa79b06c8aa31e2c9f02256983 = $(`<div id="html_d866afaa79b06c8aa31e2c9f02256983" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Québriac</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 4.0% | <b>Gauche :</b> 10.2% | <b>EXD :</b> 26.3%<br>         <b>Revenu médian :</b> 24080 €/UC<br>         <b>Abstention :</b> 17.6%     </div>     </div>`)[0];
+                popup_8ddf4566db2b022bcf96e36bab1a0668.setContent(html_d866afaa79b06c8aa31e2c9f02256983);
+            
+        
+
+        circle_marker_56a6677fc19099770fd761635fbecce4.bindPopup(popup_8ddf4566db2b022bcf96e36bab1a0668)
+        ;
+
+        
+    
+    
+            circle_marker_56a6677fc19099770fd761635fbecce4.bindTooltip(
+                `<div>
+                     Québriac — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_56a0abdedc406a28e7d4bfb105622913 = L.circleMarker(
+                [48.1014, -1.6556],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9800", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_bf4b9f0e95b2a9c6675b65f9ccf0aff8 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4338ea3de145922480f8a9ccdff0cca3 = $(`<div id="html_4338ea3de145922480f8a9ccdff0cca3" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Redon</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#FF9800;font-weight:bold'>CTR</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 4.2% | <b>Gauche :</b> 10.4% | <b>EXD :</b> 21.9%<br>         <b>Revenu médian :</b> 21610 €/UC<br>         <b>Abstention :</b> 25.5%     </div>     </div>`)[0];
+                popup_bf4b9f0e95b2a9c6675b65f9ccf0aff8.setContent(html_4338ea3de145922480f8a9ccdff0cca3);
+            
+        
+
+        circle_marker_56a0abdedc406a28e7d4bfb105622913.bindPopup(popup_bf4b9f0e95b2a9c6675b65f9ccf0aff8)
+        ;
+
+        
+    
+    
+            circle_marker_56a0abdedc406a28e7d4bfb105622913.bindTooltip(
+                `<div>
+                     Redon — Centre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_26503da22ac2aa3652842c5ca061f63f = L.circleMarker(
+                [48.1173, -1.6778],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9C27B0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_a6031cf9916651974d8b27e79f38cb30 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6b42721888fcb0a313c3fa2658f6c0f2 = $(`<div id="html_6b42721888fcb0a313c3fa2658f6c0f2" style="width: 100.0%; height: 100.0%;"><b>Rennes</b><br>Bloc : EXG</div>`)[0];
+                popup_a6031cf9916651974d8b27e79f38cb30.setContent(html_6b42721888fcb0a313c3fa2658f6c0f2);
+            
+        
+
+        circle_marker_26503da22ac2aa3652842c5ca061f63f.bindPopup(popup_a6031cf9916651974d8b27e79f38cb30)
+        ;
+
+        
+    
+    
+            circle_marker_26503da22ac2aa3652842c5ca061f63f.bindTooltip(
+                `<div>
+                     Rennes — Extrême gauche
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ab060bf42e59c484ed66d346ac62d999 = L.circleMarker(
+                [48.1653, -1.6244],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#795548", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_ff29dff90dd367c3a85184332ef72d74 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_56c29b255f8bd055d59bc173a6811c9f = $(`<div id="html_56c29b255f8bd055d59bc173a6811c9f" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Saint-Ganton</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#795548;font-weight:bold'>EXD</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 1.2% | <b>Gauche :</b> 7.1% | <b>EXD :</b> 38.1%<br>         <b>Revenu médian :</b> 21220 €/UC<br>         <b>Abstention :</b> 25.6%     </div>     </div>`)[0];
+                popup_ff29dff90dd367c3a85184332ef72d74.setContent(html_56c29b255f8bd055d59bc173a6811c9f);
+            
+        
+
+        circle_marker_ab060bf42e59c484ed66d346ac62d999.bindPopup(popup_ff29dff90dd367c3a85184332ef72d74)
+        ;
+
+        
+    
+    
+            circle_marker_ab060bf42e59c484ed66d346ac62d999.bindTooltip(
+                `<div>
+                     Saint-Ganton — Extrême droite
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_310c6bc4e6abe10516ef1d36c74cb19d = L.circleMarker(
+                [48.2322, -1.6633],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9C27B0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_77bd3470dfbb6486c1c220f98e89a1dc = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9c4ad0e3c521fd4597bf37902e461136 = $(`<div id="html_9c4ad0e3c521fd4597bf37902e461136" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Saint-Gonlay</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#9C27B0;font-weight:bold'>EXG</span><br>         <b>Population :</b> 0<br>         <b>Droite :</b> 8.1% | <b>Gauche :</b> 6.5% | <b>EXD :</b> 23.9%<br>         <b>Revenu médian :</b> 22210 €/UC<br>         <b>Abstention :</b> 18.6%     </div>     </div>`)[0];
+                popup_77bd3470dfbb6486c1c220f98e89a1dc.setContent(html_9c4ad0e3c521fd4597bf37902e461136);
+            
+        
+
+        circle_marker_310c6bc4e6abe10516ef1d36c74cb19d.bindPopup(popup_77bd3470dfbb6486c1c220f98e89a1dc)
+        ;
+
+        
+    
+    
+            circle_marker_310c6bc4e6abe10516ef1d36c74cb19d.bindTooltip(
+                `<div>
+                     Saint-Gonlay — Extrême gauche
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_24964be8ce0c42267b727a88fe628533 = L.circleMarker(
+                [48.1461, -1.7461],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9C27B0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.226088403385462, "stroke": true, "weight": 1}
+            ).addTo(map_a1430863da28eb26342364a8aefeef47);
+        
+    
+        var popup_8daa4d10c1d431c54b115778ce467e5f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_87d2c30aa5f94fbd132b28e90803eddb = $(`<div id="html_87d2c30aa5f94fbd132b28e90803eddb" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; width:200px'>         <b style='font-size:14px'>Saint-Jacques-de-la-Lande</b><br>         <hr style='margin:4px 0'>         <b>Bloc dominant :</b> <span style='color:#9C27B0;font-weight:bold'>EXG</span><br>         <b>Population :</b> 13,656<br>         <b>Droite :</b> 2.7% | <b>Gauche :</b> 11.0% | <b>EXD :</b> 17.6%<br>         <b>Revenu médian :</b> 21730 €/UC<br>         <b>Abstention :</b> 26.2%     </div>     </div>`)[0];
+                popup_8daa4d10c1d431c54b115778ce467e5f.setContent(html_87d2c30aa5f94fbd132b28e90803eddb);
+            
+        
+
+        circle_marker_24964be8ce0c42267b727a88fe628533.bindPopup(popup_8daa4d10c1d431c54b115778ce467e5f)
+        ;
+
+        
+    
+    
+            circle_marker_24964be8ce0c42267b727a88fe628533.bindTooltip(
+                `<div>
+                     Saint-Jacques-de-la-Lande — Extrême gauche
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
